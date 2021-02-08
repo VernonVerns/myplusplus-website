@@ -1,0 +1,17 @@
+* {
+    font-family: $font-roboto;
+}
+
+html, body {
+    overflow: hidden;
+}
+
+p {
+    color: $text-color;
+    font-size: clamp(16px, 5vw, 20px);
+    font-weight: 300;
+}
+
+a {
+    text-decoration: none !important;
+}

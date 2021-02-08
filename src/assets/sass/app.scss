@@ -1,0 +1,70 @@
+@font-face {
+	font-family: roboto;
+	src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap') format('truetype');
+}
+
+$font-roboto: 'Roboto', sans-serif;
+
+$dark-color: #191919;
+$pink-color: #fc8a9e;
+$text-color: #C4C4C4;
+$white-color: #e6e6e6;
+$icon-bg-color: #2B2B2B;
+
+$transition-time: all 0.65s ease;
+
+
+$fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
+@import '~bootstrap/scss/bootstrap';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '~@fortawesome/fontawesome-free/scss/v4-shims.scss';
+@import '~@fortawesome/fontawesome-free/scss/brands.scss';
+@import '~@fortawesome/fontawesome-free/scss/regular.scss';
+@import '~@fortawesome/fontawesome-free/scss/solid.scss';
+@import '../css/style.css';
+
+@import './config';
+@import './home';
+
+.paths {
+	display: grid;
+	grid-template-rows: auto auto;
+	grid-template-areas: "path1 path2";
+	width: 100%;
+	.path {
+		width: 250px;
+		height: 250px;
+		background-color: transparent;
+		border: 8px solid #191919;
+		position: absolute;
+		z-index: 0;
+
+		&.one {
+			grid-area: path1;
+			top: 250px;
+			left: 20px;
+			border-color: #141414;
+		}
+
+		&.two {
+			grid-area: path2;
+			top: -20px;
+			right: -30px;
+			border-color: #222;
+		}
+	}
+}
+
+.my-btn {
+	display: inline-block;
+	border: none;
+	outline: none;
+	padding: 8px 20px;
+	margin: 3px;
+	transition: $transition-time;
+
+	&:hover {
+		transform: scale(.98);
+		transition: $transition-time;
+	}
+}

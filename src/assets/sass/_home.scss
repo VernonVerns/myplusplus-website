@@ -1,0 +1,108 @@
+#my_home {
+	background-color: $dark-color;
+	height: 100vh;
+	overflow: hidden;
+
+	.content {
+		padding: clamp(0.5em, 5%, 2em);
+		position: relative;
+
+		grid-template-rows: 60px auto;
+		grid-template-areas: 
+					"navigation"
+					"mainSec";
+
+	 	nav {
+			grid-area: navigation;
+			position: sticky;
+			top: 0;
+			width: 100%;
+			display: grid;
+			grid-template-rows: auto;
+			grid-template-columns: repeat(2, auto);
+			grid-template-areas: 'menuBtn myplusplusLogo';
+
+			.menu-btn {
+				grid-area: menuBtn;
+				background-color: transparent;
+				border: none;
+				justify-self: start;
+				align-self: flex-start;
+
+				&:focus {
+					outline: none;
+				}
+			}
+
+			.my-nav {
+				grid-area: myplusplusLogo;
+				align-self: flex-end;
+				justify-self: end;
+
+				img {
+					width: 130px;
+				}
+			}
+		}
+
+		.main-sec {
+			grid-area: mainSec;
+			height: calc(100vh - 120px);
+			display: flex;
+			align-items: center;
+			padding: 0 clamp(0em, 5vw, 2.5em);
+
+			h1 {
+				font-size: clamp(28px, 5vw, 55px);
+				font-weight: 700;
+				color: $white-color;
+				margin-bottom:20px;
+
+				span {
+					color: $pink-color;
+				}
+			}
+
+			.social-icons {
+				display: flex;
+				margin-top: 50px;
+				li {
+					margin-right: 10px;
+					&:last-child {
+						margin-right: 0;
+					}
+					
+					a {
+						display: grid;
+						justify-content: center;
+						align-items: center;
+						width: 40px;
+						height: 40px;
+						color: $pink-color;
+						background-color: $icon-bg-color;
+						border-radius: 50px;
+						box-shadow: 3px 3px 5px rgb(0, 0, 0, 0.5);
+						transition: $transition-time;
+
+						&:hover {
+							background-color: $text-color;
+							transition: $transition-time;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.chat-btn {
+		background-color: $pink-color;
+		color: $white-color;
+		font-weight: 700;
+		font-size: 20px;
+		position: absolute;
+		bottom: 30px;
+		right: 10px;
+		border-radius: 50px 50px 0 50px;
+		
+	}
+}
