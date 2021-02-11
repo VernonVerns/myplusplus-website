@@ -1,7 +1,7 @@
 #my_home {
-	background-color: $dark-color;
+	background-color: white;
 	height: 100vh;
-	overflow: hidden;
+	overflow-y: auto;
 
 	.content {
 		padding: clamp(0.5em, 5%, 2em);
@@ -14,9 +14,10 @@
 
 	 	nav {
 			grid-area: navigation;
-			position: sticky;
+			position: fixed;
+			padding: 1.8em 1em;
 			top: 0;
-			width: 100%;
+			width: 100vw;
 			display: grid;
 			grid-template-rows: auto;
 			grid-template-columns: repeat(2, auto);
@@ -29,6 +30,7 @@
 				justify-self: start;
 				align-self: flex-start;
 
+
 				&:focus {
 					outline: none;
 				}
@@ -38,6 +40,7 @@
 				grid-area: myplusplusLogo;
 				align-self: flex-end;
 				justify-self: end;
+				padding-right: 4em;
 
 				img {
 					width: 130px;
@@ -47,15 +50,14 @@
 
 		.main-sec {
 			grid-area: mainSec;
-			height: calc(100vh - 120px);
-			display: flex;
-			align-items: center;
+			// height: calc(100vh - 120px);
 			padding: 0 clamp(0em, 5vw, 2.5em);
+			margin-top:10%;
 
 			h1 {
-				font-size: clamp(28px, 5vw, 55px);
+				font-size: clamp(28px, 5vw, 45px);
 				font-weight: 700;
-				color: $white-color;
+				color: $dark-color;
 				margin-bottom:20px;
 
 				span {
@@ -63,9 +65,32 @@
 				}
 			}
 
+			p {
+				#more {
+					display: none;
+				}
+
+				#read_more {
+					background-color: transparent;
+					border: 0;
+					color: #ec4646;
+					padding: 0;
+					font-size: clamp(16px, 5vw, 20px);
+					outline: none;
+				}
+			}
+
+			.last-line {
+				font-family: 'Dancing Script', cursive;
+				color: $blue-color;
+				font-size: clamp(20px, 5vw, 30px);
+				font-weight: 700;
+				margin-top: 50px;
+			}
+
 			.social-icons {
 				display: flex;
-				margin-top: 50px;
+				margin-top: 20px;
 				li {
 					margin-right: 10px;
 					&:last-child {
@@ -78,7 +103,7 @@
 						align-items: center;
 						width: 40px;
 						height: 40px;
-						color: $pink-color;
+						color: $blue-color;
 						background-color: $icon-bg-color;
 						border-radius: 50px;
 						box-shadow: 3px 3px 5px rgb(0, 0, 0, 0.5);
@@ -99,10 +124,25 @@
 		color: $white-color;
 		font-weight: 700;
 		font-size: 20px;
-		position: absolute;
-		bottom: 30px;
-		right: 10px;
+		position: fixed;
+		bottom: 15px;
+		right: 15px;
 		border-radius: 50px 50px 0 50px;
 		
+	}
+
+	@media screen and (max-width: 768px) {
+
+		.my-nav {
+			padding-right: 2em !important;
+
+			img {
+				width: 90px !important;
+			}
+		}
+
+		.main-sec {
+			margin-top:45% !important;
+		}
 	}
 }

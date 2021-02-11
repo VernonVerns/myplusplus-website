@@ -3,6 +3,8 @@
 	src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap') format('truetype');
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+
 $font-roboto: 'Roboto', sans-serif;
 
 $dark-color: #191919;
@@ -10,6 +12,7 @@ $pink-color: #fc8a9e;
 $text-color: #C4C4C4;
 $white-color: #e6e6e6;
 $icon-bg-color: #2B2B2B;
+$blue-color: #2196F3;
 
 $transition-time: all 0.65s ease;
 
@@ -31,26 +34,27 @@ $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
 	grid-template-rows: auto auto;
 	grid-template-areas: "path1 path2";
 	width: 100%;
+
 	.path {
 		width: 250px;
 		height: 250px;
 		background-color: transparent;
 		border: 8px solid #191919;
 		position: absolute;
-		z-index: 0;
+		z-index: 0 !important;
 
 		&.one {
 			grid-area: path1;
 			top: 250px;
 			left: 20px;
-			border-color: #141414;
+			border-color: #f9f9f9;
 		}
 
 		&.two {
 			grid-area: path2;
 			top: -20px;
-			right: -30px;
-			border-color: #222;
+			right: 40px;
+			border-color: transparent;
 		}
 	}
 }
