@@ -59,8 +59,7 @@
                         </p>
 
                         <h4 class="last-line">
-                            We love technology, connect with us and see how we
-                            can help your business.
+                            We love technology, connect us.
                         </h4>
                         <ul class="list-unstyled social-icons">
                             <li>
